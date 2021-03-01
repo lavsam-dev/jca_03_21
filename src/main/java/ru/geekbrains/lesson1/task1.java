@@ -1,5 +1,8 @@
 package ru.geekbrains.lesson1;
-
+/*
+    Домашнее задание по курсу Java Core для Android
+    Сделал: Львов Андрей
+ */
 public class task1 {
     public static void main(String[] args) {
         System.out.println("Задача 1: вычисление выражения с плавающей точкой");
