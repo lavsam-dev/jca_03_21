@@ -7,6 +7,52 @@ import java.util.Scanner;
 public class lesson2 {
 
     public static void main(String[] args) {
+        System.out.println("Задать целочисленный массив, состоящий из элементов 0 и 1.\nНапример: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ].\nС помощью цикла и условия заменить 0 на 1, 1 на 0");
+        int[] arrInt01 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        System.out.println(Arrays.toString(arrInt01));
+        for (int i = 0; i < arrInt01.length; i++)
+            if (arrInt01[i] == 0) arrInt01[i] = 1; else arrInt01[i] = 0;
+        System.out.println(Arrays.toString(arrInt01));
+
+        System.out.println("Задать пустой целочисленный массив размером 8.\nС помощью цикла заполнить его значениями 0 3 6 9 12 15 18 21");
+        int[] arrInt8 = new int[8];
+        for (int i = 0; i < arrInt8.length; i++) arrInt8[i] = i * 3;
+        System.out.println(Arrays.toString(arrInt8));
+
+        System.out.println("Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом,\nи числа меньшие 6 умножить на 2");
+        int[] arrInt6 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        System.out.println(Arrays.toString(arrInt6));
+        for (int i = 0; i < arrInt6.length; i++) if (arrInt6[i] < 6) arrInt6[i] *= 2;
+        System.out.println(Arrays.toString(arrInt6));
+
+        System.out.println("Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое),\nи с помощью цикла(-ов) заполнить его диагональные элементы единицами");
+        int[][] arrKva = new int[6][6];
+        for (int i = 0; i < arrKva.length; i++){
+            arrKva[i][i] = arrKva[i][arrKva.length - i - 1] = 1;
+        }
+        for (int i = 0; i < arrKva.length; i++) System.out.println(Arrays.toString(arrKva[i]));
+
+        System.out.println("Задать одномерный массив и найти в нем минимальный и максимальный элементы");
+        int[] arrIntMinMax = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        System.out.println(Arrays.toString(arrIntMinMax));
+        int min = arrIntMinMax[0];
+        int max = arrIntMinMax[0];
+        for (int mm : arrIntMinMax){
+            if(mm > max) max = mm;
+            if(mm < min) min = mm;
+        }
+        System.out.println("Max = " + max + " Min = " + min);
+
+        // checkBalance
+        System.out.println("Написать метод, в который передается не пустой одномерный целочисленный массив, метод должен вернуть true, если в массиве есть место,\nв котором сумма левой и правой части массива равны");
+        int[] arrC1 = {2, 2, 2, 1, 2, 2, 10, 1};
+        System.out.println(Arrays.toString(arrC1));
+        System.out.println(checkBalance(arrC1));
+        int[] arrC2 = {2, 2, 3, 1, 2, 2, 10, 1};
+        System.out.println(Arrays.toString(arrC2));
+        System.out.println(checkBalance(arrC2));
+
+        System.out.println("Написать метод, которому на вход подается одномерный массив и число n (может быть положительным,\nили отрицательным), при этом метод должен сместить все элементы массива на n позиций.\nЭлементы смещаются циклично");
         int[] arrShift = {2, 4, 8, 16, 32, 64};
         System.out.println(Arrays.toString(arrShift));
         arrayShift1(arrShift, -4);
@@ -23,13 +69,28 @@ public class lesson2 {
         System.out.println(Arrays.toString(arrShift3));
 
     }
+
+    private static boolean checkBalance(int[] arr){
+        if(arr.length > 1) {
+            int sLeft = arr[0];
+            int sRight = 0;
+            for (int i = 1; i < arr.length; i++) sRight += arr[i];
+            int i = 1;
+            do {
+                if(sLeft == sRight) return true;
+                sLeft += arr[i];
+                sRight -= arr[i];
+            } while (i++ < arr.length - 1);
+        }
+        return false;
+    }
 /*
 В arrayShift1 был использован самый очевидный алгоритм сдвига на одну позицию,
 повторяемый n раз.
 В arrayShift2 была попытка использовать блочный алгоритм, но правильного решения
 найти не удалось. Будем считать ее неудачной.
  */
-    public static void arrayShift1(int arr[], int n){
+    private static void arrayShift1(int arr[], int n){
         if(arr.length > 1) {
             for (int j = 0; j < Math.abs(n); j++) {
                 if (n > 0){
@@ -46,7 +107,7 @@ public class lesson2 {
         }
     }
 
-    public static void arrayShift2(int arr[], int n){
+    private static void arrayShift2(int arr[], int n){
         if(arr.length > 1){
             n %= arr.length;
             for (int j = 0; j < (arr.length - 1) / n; j++){
@@ -59,7 +120,7 @@ public class lesson2 {
         }
     }
 
-    public static void arrEx(){
+    private static void arrEx(){
         int[] arr = new int[5];
         arr[0] = 5;
         arr[1] = 15;
