@@ -1,10 +1,10 @@
-package ru.geekbrains;
+package ru.geekbrains.lesson2;
 
 import java.util.Arrays;
 import java.io.*;
 import java.util.Scanner;
 
-public class lesson2 {
+public class ArrayShift {
 
     public static void main(String[] args) {
         System.out.println("Задать целочисленный массив, состоящий из элементов 0 и 1.\nНапример: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ].\nС помощью цикла и условия заменить 0 на 1, 1 на 0");
@@ -84,12 +84,12 @@ public class lesson2 {
         }
         return false;
     }
-/*
-В arrayShift1 был использован самый очевидный алгоритм сдвига на одну позицию,
-повторяемый n раз.
-В arrayShift2 была попытка использовать блочный алгоритм, но правильного решения
-найти не удалось. Будем считать ее неудачной.
- */
+    /*
+    В arrayShift1 был использован самый очевидный алгоритм сдвига на одну позицию,
+    повторяемый n раз.
+    В arrayShift2 была попытка использовать блочный алгоритм, но правильного решения
+    найти не удалось. Будем считать ее неудачной.
+     */
     private static void arrayShift1(int arr[], int n){
         if(arr.length > 1) {
             for (int j = 0; j < Math.abs(n); j++) {
