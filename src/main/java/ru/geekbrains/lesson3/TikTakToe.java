@@ -79,7 +79,7 @@ public class TikTakToe {
             elem = field[y][0];
             qf = 1;
             for (int x = 1; x < fieldSizeX; x++) {
-                if (field[y][x] == elem) {
+                if (field[y][x] == elem && field[y][x] != DOT_EMPTY) {
                     if (++qf == qFill) return elem;
                 }
                 else {
@@ -92,8 +92,8 @@ public class TikTakToe {
         for (int x = 0; x < fieldSizeX; x++) {
             elem = field[0][x];
             qf = 1;
-            for (int y = 1; y < fieldSizeX; y++) {
-                if (field[y][x] == elem) {
+            for (int y = 1; y < fieldSizeY; y++) {
+                if (field[y][x] == elem && field[y][x] != DOT_EMPTY) {
                     if (++qf == qFill) return elem;
                 }
                 else {
@@ -102,73 +102,69 @@ public class TikTakToe {
                 }
             }
         }
-        // диагонали левой верхней части
-        for (int y = fieldSizeY - 1; y >= 0; y--) {
+        // диагонали левой части
+        for (int y = 0; y < fieldSizeY; y++) {
             elem = elemD = field[y][0];
             qf = qfD = 1;
             for (int x = 1; x < fieldSizeX; x++) {
-                if (y - x >= 0) {
-                    if (field[y - x][x] == elem) {
-                        if (++qf == qFill) return elem;
+                if (y + x < fieldSizeY) {
+                    if (field[y + x][x] == elem && field[y + x][x] != DOT_EMPTY) {
+                        if (++qf == qFill) {
+                            //System.out.println("DL1 = " + elem);
+                            return elem;
+                        }
                     }
                     else {
-                        elem = field[y - x][x];
+                        elem = field[y + x][x];
                         qf = 1;
                     }
                 }
-                if (y + x <= fieldSizeY - 1) {
-                    if (field[y + x][x] == elemD) {
-                        if (++qf == qFill) return elem;
+                if (y - x >= 0) {
+                    if (field[y - x][x] == elemD && field[y - x][x] != DOT_EMPTY) {
+                        if (++qfD == qFill) {
+                            //System.out.println("DL2 = " + elemD);
+                            return elemD;
+                        }
                     }
                     else {
-                        elemD = field[y + x][x];
+                        elemD = field[y - x][x];
                         qfD = 1;
                     }
                 }
             }
         }
-        // диагонали правой нижней части
-        for (int x = fieldSizeX - 1; x >= 0; x--) {
-            elem = elemD = field[0][x];
+        // диагонали правой части
+        for (int y = 0; y < fieldSizeY; y++) {
+            elem = elemD = field[y][fieldSizeX-1];
             qf = qfD = 1;
-            for (int y = 1; y < fieldSizeY; y++) {
-                if (x - y >= 0) {
-                    if (field[x - y][y] == elem) {
-                        if (++qf == qFill) return elem;
+            for (int x = fieldSizeX - 2; x >= 0; x--) {
+                if (y + (fieldSizeX - x - 1) < fieldSizeY) {
+                    if (field[y + (fieldSizeX - x - 1)][x] == elem && field[y + (fieldSizeX - x - 1)][x] != DOT_EMPTY) {
+                        if (++qf == qFill) {
+                            //System.out.println("DR1 = " + elem);
+                            return elem;
+                        }
                     }
                     else {
-                        elem = field[x - y][y];
+                        elem = field[y + (fieldSizeX - x - 1)][x];
                         qf = 1;
                     }
                 }
-                if (x + y <= fieldSizeX - 1) {
-                    if (field[x + y][y] == elemD) {
-                        if (++qf == qFill) return elem;
+                if (x - (fieldSizeY - y - 1) >= 0) {
+                    if (field[x - (fieldSizeY - y - 1)][x] == elemD && field[x - (fieldSizeY - y - 1)][x] != DOT_EMPTY) {
+                        if (++qfD == qFill) {
+                            //System.out.println("DR2 = " + elem);
+                            return elemD;
+                        }
                     }
                     else {
-                        elemD = field[x + y][y];
+                        elemD = field[x - (fieldSizeY - y - 1)][x];
                         qfD = 1;
                     }
                 }
             }
         }
         return DOT_FALSE;
-
-        /*
-        // hor
-        if (field[0][0] == c && field[0][1] == c && field[0][2] == c) return true;
-        if (field[1][0] == c && field[1][1] == c && field[1][2] == c) return true;
-        if (field[2][0] == c && field[2][1] == c && field[2][2] == c) return true;
-
-        // ver
-        if (field[0][0] == c && field[1][0] == c && field[2][0] == c) return true;
-        if (field[0][1] == c && field[1][1] == c && field[2][1] == c) return true;
-        if (field[0][2] == c && field[1][2] == c && field[2][2] == c) return true;
-
-        // dia
-        if (field[0][0] == c && field[1][1] == c && field[2][2] == c) return true;
-        if (field[0][2] == c && field[1][1] == c && field[2][0] == c) return true;
-        return false;*/
     }
 
     private static void aiTurn(){
@@ -203,9 +199,9 @@ public class TikTakToe {
     }
 
     private static void initField(){
-        fieldSizeY = 3;
-        fieldSizeX = 3;
-        qFill = 3; // кол-во фишек подряд, должно быть <= минимальному размеру поля
+        fieldSizeY = 5;
+        fieldSizeX = 5;
+        qFill = 4;  // кол-во фишек подряд, должно быть <= минимальному размеру поля
                     // но > половины максимального. Иначе нет смысла (наверно).
         field = new char[fieldSizeY][fieldSizeX];
         for (int y = 0; y < fieldSizeY; y++) {

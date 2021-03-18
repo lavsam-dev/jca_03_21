@@ -11,15 +11,11 @@ public class Cat extends Animal {
         System.out.printf("Это кот: %s\n", name);
     }
 
-    public void Run(int length) {
-        super.runAnimal(length, limitRun);
-    }
+    public void Run(int length) { super.runAnimal(length, limitRun); }
 
     public void Sweem(int length) {
         super.sweemAnimal(length, limitSwim);
     }
 
-    public static int getqCat() {
-        return qCat;
-    }
+    public static int getqCat() { return qCat; }
 }
