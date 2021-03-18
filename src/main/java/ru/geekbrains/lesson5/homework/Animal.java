@@ -16,7 +16,7 @@ public class Animal {
             System.out.printf("%s не может пробежать %dм!\n", this.name, length);
     }
 
-    public void sweemAnimal(int length, int limit) {
+    protected void sweemAnimal(int length, int limit) {
         if (limit == 0) System.out.printf("%s не умеет плавать!\n", this.name);
         else {
             if (length <= limit)
