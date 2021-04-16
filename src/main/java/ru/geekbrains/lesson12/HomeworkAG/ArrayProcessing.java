@@ -43,7 +43,7 @@ public class ArrayProcessing {
 //            threads = temp;
 //        }
 
-        System.out.printf("Starting... with %d threads", threads);
+        System.out.printf("Starting... with %d threads\n", threads);
         long startTime = System.currentTimeMillis();
         Arrays.fill(arr, 1.0f);
         long timeToFill = (System.currentTimeMillis() - startTime);
