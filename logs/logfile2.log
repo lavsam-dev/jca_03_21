@@ -1,0 +1,39 @@
+TRACE 2021-04-18 22:33:15 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:15) - Trace
+DEBUG 2021-04-18 22:33:15 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:16) - debug
+INFO  2021-04-18 22:33:15 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:18) - info
+WARN  2021-04-18 22:33:15 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:19) - warn
+ERROR 2021-04-18 22:33:15 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:20) - error
+FATAL 2021-04-18 22:33:15 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:21) - fatal
+INFO  2021-04-18 22:33:15 [Thread-0] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:23) - Hello world!
+TRACE 2021-04-18 22:33:41 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:15) - Trace
+DEBUG 2021-04-18 22:33:41 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:16) - debug
+INFO  2021-04-18 22:33:41 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:18) - info
+WARN  2021-04-18 22:33:41 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:19) - warn
+ERROR 2021-04-18 22:33:41 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:20) - error
+FATAL 2021-04-18 22:33:41 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:21) - fatal
+INFO  2021-04-18 22:33:41 [Thread-0] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:23) - Hello world!
+TRACE 2021-04-18 22:37:56 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:15) - Trace
+DEBUG 2021-04-18 22:37:56 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:16) - debug
+INFO  2021-04-18 22:37:56 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:17) - 100500 info Hi hell
+WARN  2021-04-18 22:37:56 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:19) - warn
+ERROR 2021-04-18 22:37:56 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:20) - error
+FATAL 2021-04-18 22:37:56 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:21) - fatal
+INFO  2021-04-18 22:37:56 [Thread-0] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:23) - Hello world!
+TRACE 2021-04-18 22:39:52 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:15) - Trace
+DEBUG 2021-04-18 22:39:52 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:16) - debug
+INFO  2021-04-18 22:39:52 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:17) - 100500 info Hi hell
+WARN  2021-04-18 22:39:52 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:19) - warn
+ERROR 2021-04-18 22:39:52 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:20) - error
+FATAL 2021-04-18 22:39:52 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:21) - fatal
+ERROR 2021-04-18 22:39:52 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:28) - java.lang.Exception: EXCEPTION!!!!
+INFO  2021-04-18 22:39:52 [Thread-0] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:23) - Hello world!
+TRACE 2021-04-18 22:40:37 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:15) - Trace
+DEBUG 2021-04-18 22:40:37 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:16) - debug
+INFO  2021-04-18 22:40:37 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:17) - 100500 info Hi hell
+WARN  2021-04-18 22:40:37 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:19) - warn
+ERROR 2021-04-18 22:40:37 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:20) - error
+FATAL 2021-04-18 22:40:37 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:21) - fatal
+INFO  2021-04-18 22:40:37 [Thread-0] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:23) - Hello world!
+ERROR 2021-04-18 22:40:37 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:29) - Throwing
+java.lang.Exception: EXCEPTION!!!!
+	at ru.geekbrains.lesson14.LoggingExample.main(LoggingExample.java:26) [classes/:?]

@@ -1,0 +1,8 @@
+INFO  2021-04-18 22:44:49 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:17) - 100500 info Hi hell
+WARN  2021-04-18 22:44:50 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:19) - warn
+ERROR 2021-04-18 22:44:50 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:20) - error
+FATAL 2021-04-18 22:44:50 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:21) - fatal
+INFO  2021-04-18 22:44:50 [Thread-0] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:23) - Hello world!
+ERROR 2021-04-18 22:44:50 [main] ru.geekbrains.lesson14.LoggingExample (LoggingExample.java:29) - Throwing
+java.lang.Exception: EXCEPTION!!!!
+	at ru.geekbrains.lesson14.LoggingExample.main(LoggingExample.java:26) [classes/:?]
